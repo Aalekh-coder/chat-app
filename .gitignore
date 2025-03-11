@@ -3,3 +3,6 @@
 
 # Ignore environment files
 .env
+
+# Ignore environment files in backend folder
+/backend/.env
