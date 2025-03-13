@@ -1,10 +1,13 @@
 import axios from 'axios';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
+import { setAuthUser } from '../redux/userSlice';
 
 const Login = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const dispatch = useDispatch()
 
 
   const [user, setUser] = useState({
@@ -17,14 +20,15 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:3000/api/v1/user/login", user, {
+      const {data} = await axios.post("http://localhost:3000/api/v1/user/login", user, {
         headers: {
           "Content-Type": "application/json"
         },
         withCredentials: true
       })
       toast.success("User login successfully");
-      navigate("/")
+      navigate("/");
+      dispatch(setAuthUser(data))
     } catch (error) {
       console.log(error);
       toast.error("error while login")
