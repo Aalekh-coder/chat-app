@@ -20,7 +20,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const {data} = await axios.post("http://localhost:3000/api/v1/user/login", user, {
+      const {data} = await axios.post("https://chat-app-7hpd.onrender.com/api/v1/user/login", user, {
         headers: {
           "Content-Type": "application/json"
         },

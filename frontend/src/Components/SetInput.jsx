@@ -14,7 +14,7 @@ const SetInput = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:3000/api/v1/message/send/${selectedUser?._id}`, { message }, {
+      const res = await axios.post(`https://chat-app-7hpd.onrender.com/api/v1/message/send/${selectedUser?._id}`, { message }, {
         header: {
           "ContentType": "application/json"
         },

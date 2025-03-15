@@ -21,7 +21,7 @@ const App = () => {
 
   useEffect(() => {
     if (authUser) {
-      const socket = io("http://localhost:3000", {
+      const socket = io("https://chat-app-7hpd.onrender.com", {
         query: {
           userId: authUser._id
         }
