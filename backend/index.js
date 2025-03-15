@@ -13,7 +13,7 @@ dotenv.config()
 const PORT = process.env.PORT || 8080
 
 const corsOption = {
-    origin: "https://chat-app-frontend-xcxu.onrender.com",
+    origin: ["http://localhost:5173","https://chat-app-frontend-xcxu.onrender.com"],
     credentials:true
 }
 app.use(urlencoded({extended:true}))

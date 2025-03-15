@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { setAuthUser, setOtherUser } from "../redux/userSlice"
+import { ProductionBackendUrl } from "../hooks/utils"
 
 const Sidebar = () => {
     const navigate = useNavigate();
@@ -26,7 +27,7 @@ const Sidebar = () => {
 
     const logoutHandler = async () => {
         try {
-            const { data } = await axios.get("https://chat-app-7hpd.onrender.com/api/v1/user/logout");
+            const { data } = await axios.get(`${ProductionBackendUrl}/api/v1/user/logout`);
             navigate("/login");
             toast.success(data.message);
             dispatch(setAuthUser(null))

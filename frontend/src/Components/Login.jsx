@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
 import { setAuthUser } from '../redux/userSlice';
+import { ProductionBackendUrl } from '../hooks/utils';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const {data} = await axios.post("https://chat-app-7hpd.onrender.com/api/v1/user/login", user, {
+      const {data} = await axios.post(`${ProductionBackendUrl}/api/v1/user/login`, user, {
         headers: {
           "Content-Type": "application/json"
         },

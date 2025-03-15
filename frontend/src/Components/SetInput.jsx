@@ -3,6 +3,7 @@ import { IoSend } from "react-icons/io5"
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux"
 import { setMessages } from "../redux/messageSlice";
+import { ProductionBackendUrl } from "../hooks/utils";
 
 const SetInput = () => {
   const [message, setMessage] = useState('');
@@ -14,7 +15,7 @@ const SetInput = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`https://chat-app-7hpd.onrender.com/api/v1/message/send/${selectedUser?._id}`, { message }, {
+      const res = await axios.post(`${ProductionBackendUrl}/api/v1/message/send/${selectedUser?._id}`, { message }, {
         header: {
           "ContentType": "application/json"
         },
