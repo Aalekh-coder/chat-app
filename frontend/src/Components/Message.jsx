@@ -22,7 +22,7 @@ const Message = ({ message }) => {
         <div className="chat-header">
           <time className="text-xs opacity-50 text-black">12:45</time>
         </div>
-        <div className="chat-bubble">{message?.message}</div>
+        <div className="chat-bubble chat-bubble-primary rounded-2xl">{message?.message}</div>
       </div>
     )
 }

@@ -78,7 +78,7 @@ const Signup = () => {
           <div className='flex items-center my-4 gap-3'>
             <div className='flex items-center gap-3'>
               <p>Male</p>
-              <input type="checkbox" defaultChecked className="checkbox" checked={user.gender === "male"} onChange={() => handlCheckbox("male")} />
+              <input type="checkbox" className="checkbox" checked={user.gender === "male"} onChange={() => handlCheckbox("male")} />
             </div>
             <div className='flex items-center gap-3'>
               <p>Female</p>
