@@ -7,7 +7,7 @@ import SendInput from "./SetInput"
 const MessageContainer = () => {
   const { selectedUser, authUser,onlineUsers } = useSelector(store => store.user)
 
-const isOnline = onlineUsers?.includes(selectedUser._id)
+  const isOnline = selectedUser && onlineUsers?.includes(selectedUser._id);
   return (
     <>{
       selectedUser !== null ? (<div className='md:min-w-[550px] flex flex-col'>
