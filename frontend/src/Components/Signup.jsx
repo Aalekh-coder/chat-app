@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios"
 import toast from 'react-hot-toast';
-import { ProductionBackendUrl } from '../hooks/utils';
+import { localBackendUrl } from '../hooks/utils';
 
 const Signup = () => {
 
@@ -24,7 +24,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post(`${ProductionBackendUrl}/api/v1/user/register`, user, {
+      const res = await axios.post(`${localBackendUrl}/api/v1/user/register`, user, {
         headers: {
           "Content-Type": "application/json"
         },
